@@ -1,14 +1,17 @@
-import React from "react";
-import { BrowserRouter as Router, Routes } from 'react-router-dom';
-import Login from "./Componentes/Login";
-import Home from "./Componentes/Home";
+import Login from './Componentes/Login'
+import Home from './Componentes/Home';
+import { useState } from 'react';
 function App() {
+  
+  const [user, setUser] = useState([])
+  
   return (
-    <Router>
+    <div className="App">
       
-        <Routes  path="/" Component={Login}/>
-        <Routes path="/Home" Component={Home}/>
-    </Router>
+      <Login setUser={setUser}/>
+      
+      
+    </div>
   );
 }
 
